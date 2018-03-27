@@ -137,6 +137,12 @@ class Linked_list(object):
         check2 = False  #Value for the second condition
         check3 = False  #Value for the last condition
 
+        temp = self.first_element
+        length = 0
+        while temp:
+            length +=1
+            temp = temp.link
+
         if self.seize() == self.number_of_elements: #Checks the first condition
             check1 = True
 
