@@ -143,7 +143,7 @@ class Linked_list(object):
             length +=1
             temp = temp.link
 
-        if self.seize() == self.number_of_elements: #Checks the first condition
+        if length == self.number_of_elements: #Checks the first condition
             check1 = True
 
             
