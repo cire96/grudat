@@ -60,7 +60,7 @@ class tree(object):
         """ If the node in the right branch has a higher priority then this node, this function places the right node higher upp in the tree """
         if self.right_branch != None: #The right branch might be empty and then there is no point in checking
             
-            if self.right_branch.priority > self.priority: 
+            if self.right_branch.priority < self.priority: 
 
                 temp = tree(self.node, self.left_branch, self.right_branch.left_branch, self.priority) #create a new tree, same as the old one but change the right branch so that it the same as the left branch of the right branch
                 
@@ -75,7 +75,7 @@ class tree(object):
         """ If the node in the left branch has a higher priority then this node, this function places it higher upp in the tree """
 
         if self.left_branch != None: # The left branch might be empty and then there is no point in checking
-            if self.left_branch.priority > self.priority:
+            if self.left_branch.priority < self.priority:
 
                 temp = tree(self.node, self.left_branch.right_branch, self.right_branch, self.priority) # create a new tree, same as the old one but change the left branch so that it is tha same as the right branch of the left branch
 
@@ -99,6 +99,9 @@ class tree(object):
             
             if self.right_branch != None: #Then, print the right branch
                 self.right_branch.print_tree()
+
+    def length(self):
+        return self.seize
 
 
             
@@ -139,9 +142,9 @@ def main():
 
     assert test.node > test.left_branch.node
     assert test.node < test.right_branch.node
-    assert test.priority >= test.left_branch.priority
-    assert test.priority >= test.right_branch.priority
-    assert test.seize == 17
+    assert test.priority <= test.left_branch.priority
+    assert test.priority <= test.right_branch.priority
+    assert test.length() == 17
     
     test.print_tree()
     
