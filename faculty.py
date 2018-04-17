@@ -9,6 +9,7 @@ def faculty(a):
         return 1
     else:
         return -1
+    
 def main():
 
     """ Check the value of a few numbers """

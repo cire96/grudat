@@ -3,7 +3,7 @@ import random
 class tree(object):
 
     def __init__(self,data = None, left_branch = None, right_branch = None, prio = 0):
-        """ Stores a string, two refrences too other instances of this object, a priority integer and the seize of the tree """
+        """ Stores a string, two refrences too other instances of this object, a priority integer and the seize of the tree: O(1) """
 
         self.node = data
         self.left_branch = left_branch
@@ -18,7 +18,7 @@ class tree(object):
 
     def add_element(self, data):
 
-        """ Adds an element to the tree structure so that all values in the right branch are "higher" then th previous one and all values in the left branch are smaller then the previous one """
+        """ Adds an element to the tree structure so that all values in the right branch are "higher" then th previous one and all values in the left branch are smaller then the previous one: O(log(n)) """
 
         if self.node == data: #If the value already exists nothing happens, there are no doubles in the tree
             return self
@@ -57,7 +57,7 @@ class tree(object):
         
 
     def rotate_left(self):
-        """ If the node in the right branch has a higher priority then this node, this function places the right node higher upp in the tree """
+        """ If the node in the right branch has a higher priority then this node, this function places the right node higher upp in the tree: O(log(n)) """
         if self.right_branch != None: #The right branch might be empty and then there is no point in checking
             
             if self.right_branch.priority < self.priority: 
@@ -72,7 +72,7 @@ class tree(object):
 
     def rotate_right(self):
 
-        """ If the node in the left branch has a higher priority then this node, this function places it higher upp in the tree """
+        """ If the node in the left branch has a higher priority then this node, this function places it higher upp in the tree: O(log(n)) """
 
         if self.left_branch != None: # The left branch might be empty and then there is no point in checking
             if self.left_branch.priority < self.priority:
@@ -88,7 +88,7 @@ class tree(object):
 
     def print_tree(self):
 
-        """ Prints all of the nodes in the tree in order """
+        """ Prints all of the nodes in the tree in order: O(n) """
 
         if self.node != None: #If the tree is empty nothing should happen
             
@@ -101,6 +101,9 @@ class tree(object):
                 self.right_branch.print_tree()
 
     def length(self):
+
+        """ Returns the seize of the tree: O(1) """
+        
         return self.seize
 
 
