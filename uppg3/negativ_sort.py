@@ -1,3 +1,5 @@
+import random
+
 def zero_sort(a):
 
     """ Sorts the list a so that all negative elements in the list are to the left """
@@ -12,7 +14,7 @@ def zero_sort(a):
         Termination:
         """
 
-        if a[i] < 0:   #if the element j is negative
+        if a[i] < 0:   #if the element at index i is negative
 
             #change place with the element at index j
             
@@ -29,6 +31,11 @@ def main():
 
     x = [3, -2, 1]
     zero_sort(x)
+
+    y = random.sample(range(-100,100), 30)
+    print(y)
+    zero_sort(y)
+    print(y)
 
     assert x == [-2, 3, 1]
     assert v == [-1, -3, -2, -5, -4, 0, 0, 8, 4, 1, 7]
