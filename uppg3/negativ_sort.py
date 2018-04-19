@@ -2,7 +2,8 @@ import random
 
 def zero_sort(a):
 
-    """ Sorts the list a so that all negative elements in the list are to the left """
+    """ Sorts the list a so that all negative elements in the list are to the left
+        Timecomplexity: O(n)"""
     
     j = 0     #refers to the index of the last moved negative element in the list
     for i in range(0, len(a)):
